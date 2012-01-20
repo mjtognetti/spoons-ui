@@ -1,17 +1,26 @@
+A descriptive excerpt from a paper submitted to the www2012 Conference, Industry Track:
+
+
 The ultimate goal of the User Interface is to provide an always-accessible platform for quick analysis of outage signals and other anomalous tweet behavior. To this end, the UI was designed with five core principles in mind:
+
 1. High Data Density: to provide all the data needed to inform the user and fulfill the tasks of the user interface
+
 2. Minimal User Interaction: all relevant information should be available without requiring the user to explicitly ask for it
+
 3. Coherency:  convey the information so that it can be quickly understood
+
 4. (Almost) Universal Accessibility: the information and functionality provided by the User Interface should be accessible whenever needed. Initially, this means the User Interface should be Web-based. Ultimately, this means the interface should be mobile-friendly as well1
+
 5. Performance: the user interface should be responsive and its usage should be intuitive
+
 These principles directed the design and development of the SPOONS User Interface since its inception. As a result, every element in the UI provides some piece of useful quickly-parsable information to the user. Administrative debris (to borrow a term from Tufte [7]) is minimized. 
 
 
-Figure 2. A screenshot of the SPOONS UI depicting multiple time series (predicted traffic vs. actual traffic), media and outage events, and a list of relevant tweets for a given time period.
-Figure 2 shows a screen shot of the current  user interface. The main screen of the UI is composed of three main components: (a) a time series chart, showing any time series data maintained by SPOONS for any time interval; (b) an event log,  which specifies when the outages (and other detected events) occurred; and (c) a list of sample Netflix-related tweets from the currently selected time range. Each UI component is briefly discussed below.
 3.7.1 Time Series Chart
 The main workhorse of the User Interface, the time series chart, provides an intuitively understandable graphical representation of the information stored in the SPOONS databases, including tweet activity (mainly in the form of relevant tweet volume) and analysis method results. This allows Netflix engineers, who can choose what time series data to display, to quickly scan for anomalous behavior and detect unusual tweet patterns. In addition, any events, both those caught by the SPOONS system and those reported by Netflix engineers, are color-coded by type (blue for media events, red for outages) and are overlaid onto the chart to provide additional contextual information. The chart also functions as time range control for the tweet list through a simple click-and-drag gesture users are able to narrow the range from which the tweet list pulls its tweets.
+
 3.7.2 Event Log
 At present, SPOONS detects possible service outages and possible media events. The event log presents the user with a detailed look at all events within the currently selected time range. Information available for each event includes type (media, outage, etc.), confirmation-status (e.g. whether Netflix engineers confirmed an outage), duration, start and end times, severity, and any user-supplied explanatory notes. In order to make their location in time apparent to the user, each entry in the log also has a corresponding graphical representation on the time series chart. In addition, the log functions as a medium for event annotation, providing the means for Netflix engineers to report new events, confirm event validity, and supply any relevant notes.
+
 3.7.3 Tweet List
 Whenever an event is detected and requires confirmation Netflix engineers want to observe the Netflix-related tweets from the relevant time range that lead to the detection decision. The tweet list provides the means to do so by displaying the tweets used within the system. Initially displaying a random set of tweets from within the currently selected time range, the list can be modified and its range narrowed by all of the other components of the User Interface. A click-and-drag on the chart will narrow the range of tweets displayed by the list as well as order them chronologically. Selection of an event within the event log (via double click) will produce a list of randomly selected tweets relevant to that particular event. By using these interactions, users are able to view the tweets that are the most relevant to whatever task or information they are currently interested in.
