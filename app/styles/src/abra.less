@@ -1,0 +1,144 @@
+@import "chart.less";
+@import "timerange.less";
+@import "seriesSelector.less";
+@import "events.less";
+@import "tweets.less";
+
+html, body {
+   height: 100%;
+}
+
+.hover-scrollbar {
+   overflow: hidden;
+   
+   &:hover {
+      overflow: auto;
+   }
+   
+   /* Scrollbar 
+      I stole this from thenounproject.com
+      */
+   &::-webkit-scrollbar{
+     width: 8px;
+     height: 10px;
+   }
+
+   &::-webkit-scrollbar-button:start:decrement {
+     display: block;
+     width: 5px;
+     height: 5px;
+     background-color: transparent;
+   }
+   &::-webkit-scrollbar-button:end:increment {
+     display: block;
+     width: 5px;
+     height: 5px;
+     background-color: transparent;
+   }
+   &::-webkit-scrollbar-track:enabled {
+     background-color: transparent;
+   }
+   &::-webkit-scrollbar-track-piece {
+     background-color: transparent;
+     border: none;
+     margin: 4px 0 4px 0;
+   }
+   &::-webkit-scrollbar-thumb:vertical {
+     height: 30px;
+     border: 1px solid rgba(140, 140, 140, .5);
+     background-color: rgba(155, 155, 155, .5);
+     -moz-border-radius: 5px; 
+     -webkit-border-radius: 5px; 
+     border-radius: 5px; 
+     -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.2), inset 0 0 1px rgba(255, 255, 255, .8);
+     -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.2), inset 0 0 1px rgba(255, 255, 255, .8);
+     box-shadow: 0 1px 3px rgba(0,0,0,0.2), inset 0 0 1px rgba(255, 255, 255, .8);
+     -webkit-transition: background-color .2s;
+     -moz-transition: background-color .2s;
+     transition: background-color .2s;
+   }
+
+   &::-webkit-scrollbar-thumb:vertical:active{
+     background-color: rgba(155, 155, 155, 1);
+     border: 1px solid rgba(140, 140, 140, 1);
+   }
+   &::-webkit-scrollbar-thumb:horizontal { width: 30px; background-color: rgba(0, 0, 0, 0.5); -webkit-border-radius: 5px; }
+}
+
+#wrapper {
+   height: 100%;
+   min-height: 600px;
+   min-width: 800px;
+   background: #fefefe;
+}
+
+#content {
+   width: 100%;
+   height: 94%;
+   min-height: 565px;
+
+   #content-left {
+      float: left;
+      width: 69%;
+      height: 100%;
+      padding: 0 0.5%;
+   }
+
+   #content-right {
+      float: right;
+      width: 29%;
+      height: 100%;
+      padding: 0 0.5%;
+   }
+}
+
+#timeseries-container {
+   position: relative;
+   height: 70%;
+   min-height: 424px;
+}
+
+#events-container {
+   position: relative;
+   height: 30%;
+   min-height:100px;
+}
+
+#tweetList-container {
+   position: relative;
+   min-height: 565px;
+   height: 100%;
+}
+
+.loadingOverlay {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   height: 100%;
+   width: 100%;
+   z-index: 9999;
+   background: #fff;
+   background-image: url('styles/src/images/loadingIndicator.gif');
+   background-position: center center;
+   background-repeat: no-repeat;
+   
+   span {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -20px;
+      margin-top: 20px;
+      width: 40px;
+   }
+}
+
+.display-none {
+   display: none !important;
+}
+
+.clear {
+   clear: both;
+}

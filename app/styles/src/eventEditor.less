@@ -1,0 +1,123 @@
+#eventEditor-container {
+   position: absolute;
+   top: 2em;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   
+   #eventEditor {
+      height: 100%;
+      width: 100%;
+   
+      .properties {
+         display: table;
+         border-spacing: 10px 2px;
+         width: 100%;
+         height: 98%;
+         
+         .left-cell {
+            display: table-cell;
+
+            ul {
+               margin: 0;
+               height: 90%;
+            
+               li.type {
+                  vertical-align: middle;
+                  text-align: center;
+                  padding: 2px;
+                  margin: 2.5% 0;
+                  height: 20%;
+                  border: 2px solid white;
+                  
+                  
+                  &:hover {
+                     cursor: pointer;
+                     border: 2px solid transparent;
+                  }
+                  
+                  &.selected, &:active {
+                     border: 2px solid #2A85E8;
+                  }
+                  
+                  &.media {
+                     background: #C2FFBF;
+                  }
+                  
+                  &.outage {
+                     background: #FFBFBF;
+                  }
+                  
+                  &.poutage {
+                     background: #E9A4FF;
+                  }
+                  
+                  &.hole {
+                     background: #CCCCCC;
+                  }
+               }
+            }
+         }
+         
+         .middle-cell {
+            display: table-cell;
+            width: 100%;
+            height: 100%;
+
+            .timerange {
+               input {
+                  border: 0;
+                  
+                  &:hover {
+                     color: orange;
+                     cursor: pointer;
+                  }
+                  
+                  &:focus {
+                     border: 0;
+                     color: orange;
+                  }
+                  
+                  &.range-date-input {
+                     font-size: 1.4em;
+                     width: 6em;
+                  }
+                  
+                  &.range-time-input {
+                     font-size: 1.2em;
+                     width: 4.5em;
+                     color: #777;
+                     margin: -0.1em;
+                     
+                     &:hover {
+                        color: orange;
+                     }
+                     
+                     &:focus {
+                        color: orange;
+                     }
+                  }
+               }
+            }
+            
+            .annotation {
+               width: 100%;
+               
+               textarea {
+                  width: 99%;
+                  resize: vertical;
+                  font: inherit;
+               }
+            }
+         }
+         
+         .right-cell {
+            display: table-cell;
+         }
+         
+      }
+      
+      .identification {
+      }
+   }
+}

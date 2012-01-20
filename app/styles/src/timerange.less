@@ -1,0 +1,58 @@
+#rangeSelector-container {
+   font-size: 1.7em;
+   padding: 0 0.5%;
+   
+   #rangeSelector {
+      display: inline;
+   
+      input {
+         border: 0;
+         width: 5em;
+         font-size: 1em;
+         
+         &:hover {
+            color: orange;
+            cursor: pointer;
+         }
+         
+         &:focus {
+            border: 0;
+            color: orange;
+         }
+         
+         &.range-date-input {
+            width: 6em;
+         }
+         
+         &.range-time-input {
+            font-size: 0.8em;
+            width: 4.5em;
+            color: #999;
+            margin: -0.1em;
+            
+            &:hover {
+               color: orange;
+            }
+            
+            &:focus {
+               color: orange;
+            }
+         }
+      }
+   }
+   
+   .refresh {
+      display: inline-block;
+      font-size: 0.8em;
+      margin-left: 10px;
+      
+      &:hover {
+      }
+   }
+   
+   .title {
+      float: right;
+      font-size: 1.2em;
+      margin: 5px;
+   }
+}

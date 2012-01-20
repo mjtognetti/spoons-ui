@@ -1,0 +1,56 @@
+#chart-container{
+   position: absolute;
+   margin-top: 5px;
+   width: 100%;
+   top: 2.5em;
+   bottom: 0px;
+}
+
+#legend-container {
+   position: relative;
+   width: 100%;
+   background: white;
+   color: #2A85E8;
+   border-bottom: 1px solid #2A85E8;
+   
+   span.placeholder {
+      color: inherit;
+   }
+   
+   &:hover {
+      border-bottom: 1px solid orange;
+      color: orange;
+      cursor: pointer;
+   }
+   
+   table {
+      border: 0;
+      margin: 0;
+      background: transparent;
+      color: inherit;
+      width: 100%;
+      
+      tbody {
+         color: inherit;
+      }
+      
+      tr {
+         float: left;
+         color: inherit;
+         
+         td.legendColorBox {
+            padding: 3px 1px 2px 3px;
+         }
+         
+         td.legendLabel {
+            padding: 2px 4px 2px 1px;
+            color: inherit;
+         }
+      }
+   }
+   
+   a {
+      display: block;
+      float: right;
+   }
+}

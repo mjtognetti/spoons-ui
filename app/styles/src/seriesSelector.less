@@ -1,0 +1,54 @@
+#seriesSelector-container {
+   position: absolute;
+   width: 100%;
+   top: 2em;
+   bottom: 0px;
+   background: white;
+   
+   .header {
+      width: 100%;
+      background: white;
+      color: #2A85E8;
+      border-bottom: 1px solid #2A85E8;
+      cursor: pointer;
+      
+      &:hover {
+         color: orange;
+         border-bottom: 1px solid orange;
+      }
+   }
+   
+   .body {
+      position: relative;
+      margin-left: 10px;
+      height: 95%;
+   }
+   
+   .series-grouping {
+      float: left;
+      font-weight: bold;
+      width: 33%;
+   
+      li {
+         margin-bottom: 1px;
+      
+         .member {
+            color: #2A85E8;
+            margin-bottom: 1px;
+            cursor: pointer;
+            
+            &:hover {
+               color: #11639d;
+            }
+         }
+         
+         .member.active {
+            color: orange;
+            
+            &:hover {
+               color: #FEBE42;
+            }
+         }
+      }
+   }
+}

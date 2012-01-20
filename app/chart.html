@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>SPOONS - Abra</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+  <!--
+   <link rel="stylesheet" href="assets/styles/bootstrap.min.css">
+   -->
+   <link rel="stylesheet" href="styles/vendor/globals.css">
+   <link rel="stylesheet" href="styles/vendor/jquery-ui-1.8.16.custom.css">
+   <link rel="stylesheet" href="styles/vendor/timePicker.css">
+   <link rel="stylesheet/less" href="styles/src/abra.less">
+
+	<!-- Favicons
+	================================================== -->
+   
+   <!-- Vendor Scripts
+   ================================================== -->
+   <script type='text/javascript' src='js/lib/vendor/less.js'></script>
+
+</head>
+<body>
+
+
+
+	<!-- Primary Page Layout
+	================================================== -->
+   
+   <div id='wrapper'>
+   
+      <div id='rangeSelector-container'>
+      
+         <div id='rangeSelector'>
+            <input name='from-date' id="from-date" class='range-date-input' placeholder='From'></input>
+            <input name='from-time' id='from-time' class='range-time-input' placeholder='10:00am'></input>
+            -
+            <input name='to-date' id="to-date" class='range-date-input' placeholder='To'></input>
+            <input name='to-time' id="to-time" class='range-time-input' placeholder='6:15pm'></input>
+         </div>
+         
+         <a href="#" class="refresh">refresh</a>
+         <a href="#" class='title'>SPOONS</a>
+         
+      </div>
+      
+      <div id='content'>
+      
+         <div id='timeseries-container'>
+            <div id='legend-container'>
+               <span class='placeholder'>add/remove series</span>
+            </div> 
+            <div id='seriesSelector-container' class='hover-scrollbar display-none'></div>
+            <div id='chart-container'></div>
+         </div>
+         
+         <div id='events-container'>
+            <div id='eventController-container'></div>
+            <div id='eventEditor-container' class='display-none'></div>
+            <div id='eventSourceSelector-container' class='hover-scrollbar display-none'></div>
+            <div id='eventList-container' class='hover-scrollbar'></div>
+         </div>
+         
+      </div>
+    
+   <!-- Templates
+   ================================================== -->
+<script type='text/html' id='event-controller-template'>
+      <div id='event-controller'>
+         <div id='event-selector-trigger' class='<%= selector.classes %>'><%= selector.msg %></div>
+         <div id='event-report-trigger' class='<%= report.classes %>'><%= report.msg %></div>
+         <div class='clear'></div>
+      </div>
+   </script>
+   
+   <script type='text/html' id='event-collection-template'>
+      <div class='<%= classes %>' data-source='<%= source %>'>
+         <%= displayName %>
+      </div>
+   </script>
+         
+   <script type='text/html' id='event-template'>
+      <div class="event">
+         <div class="type <%= type %>" ><%= type %></div>
+         <div class='info'>
+            <div class='source'><%= source %></div>
+            <div class='timerange'>
+               <span class='from date-time'><%= from %></span>
+               -
+               <span class='to date-time'><%= to %></span>
+            </div>            
+         </div>
+         <div class='annotation'><%= annotation %></div>
+         <div class='action'><span><%= action %></span></div>
+      </div>
+   </script>
+   
+   <script type='text/html' id='event-editor-template'>
+   
+      <div id='eventEditor'>
+         <div class='properties'>
+            <div class='left-cell'>
+               <ul>
+                  <li data-type='media' class='type media'>media</li>
+                  <li data-type='outage' class='type outage'>outage</li>
+                  <li data-type='poutage' class='type poutage'>poutage</li>
+                  <li data-type='hole' class='type hole'>hole</li>
+               </ul>
+            </div>
+            
+            <div class='middle-cell'>
+               <div class='timerange'>
+                  <input class='range-date-input' id='editor-from-date' placeholder='from'></input>, 
+                  <input class='range-time-input' id='editor-from-time'></input>
+                  -
+                  <input class='range-date-input' id='editor-to-date' placeholder='to'></input>, 
+                  <input class='range-time-input' id='editor-to-time'></input>
+               </div>
+               <div class='annotation'>
+                  <textarea rows="4" cols=""><%= annotation %></textarea>
+               </div>
+               <div class='identification'>id: <%= id %></div>
+            </div>
+            
+            <div class='right-cell'></div>
+         </div> 
+      </div>
+      
+   </script>
+   
+   <script type='text/html' id='series-group-template'>
+      <ul class='series-grouping'>
+         <%= title %>
+         <% _.each(members, function(member) { %>
+         <li>
+            <span class='<%= member.classes %>' data-cid='<%= member.cid %>'>
+               <%= member.name %>
+            </span>
+         </li>
+         <% }); %>
+      </ul>
+   </script>
+   
+   <script type='text/javascript' data-main='js/main-chart.js' src='js/require.js'></script>
+
+
+<!-- End Document
+================================================== -->
+</body>
+</html>

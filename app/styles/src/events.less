@@ -1,0 +1,210 @@
+@import "eventEditor.less";
+
+#event-controller {
+   width: 100%;
+   background: white;
+   color: #2A85E8;
+   border-bottom: 1px solid #2A85E8;
+   
+   &:hover {
+      border-bottom: 1px solid orange;
+      color: orange;
+   }
+}
+
+#event-selector-trigger {
+   display: inline-block;
+   width: 70%;
+   color: #2A85E8;
+   
+   &:hover {
+      color: orange;
+      cursor: pointer;
+   }
+   
+   &.editor {
+      float: right;
+      width: auto;
+      margin-left: 20px;
+      font-weight: bold;
+   }
+}
+
+#event-report-trigger {
+   display: inline-block;
+   width: 29%;
+   color: #2A85E8;
+   text-align: right;
+   
+   &:hover {
+      color: orange;
+      cursor: pointer;
+   }
+   
+   &.editor {
+      float: right;
+      width: auto;
+      font-weight: bold;
+   }
+}
+
+#eventSourceSelector-container {
+   position: absolute;
+   top: 2em;
+   bottom: 0px;
+   width: 100%;
+   
+   .source{
+      width: 30%;
+      margin: 5px 0;
+      float: left;
+      color: #2A85E8;
+      cursor: pointer;
+      
+      &:hover {
+         color: #11639d;
+      }
+   }
+   
+   .source.active {
+      color: orange;
+      
+      &:hover {
+         color: #FEBE42;
+      }
+   }
+}
+
+#eventList-container {
+   position: absolute;
+   top: 2em;
+   bottom: 0px;
+   width: 100%;
+   
+   .eventList {
+      display: table;
+      border-spacing: 10px 5px;
+   }
+   
+   .empty {
+      width: 100%;
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      margin-top: -0.5em;
+   }
+   
+   .event {
+      margin: 2px 0;
+      display: table-row;
+      width: 100%;
+      
+      .type {
+         display: table-cell;
+         vertical-align: middle;
+         text-align: center;
+         padding: 0 2px;
+         background: #FFB90F;
+        
+         &.media {
+            background: #C2FFBF;
+         }
+         
+         &.outage {
+            background: #FFBFBF;
+         }
+         
+         &.poutage {
+            background: #E9A4FF;
+         }
+         
+         &.hole {
+            background: #CCCCCC;
+         }
+         
+         &.monitor {
+            background: #BFFFFF;
+         }
+      }
+      
+      .info {
+         display: table-cell;
+         white-space: nowrap;
+         vertical-align:top;
+         
+         .source {
+            font-weight:bold;
+         }
+         
+         .timerange {
+            input {
+               border: 0;
+               
+               &:hover {
+                  color: orange;
+                  cursor: pointer;
+               }
+               
+               &:focus {
+                  border: 0;
+                  color: orange;
+               }
+               
+               &.range-date-input {
+                  width: 6em;
+               }
+               
+               &.range-time-input {
+                  width: 4.5em;
+                  margin: -0.1em;
+                  
+                  &:hover {
+                     color: orange;
+                  }
+                  
+                  &:focus {
+                     color: orange;
+                  }
+               }
+            }
+         }
+      }
+      
+      .annotation {
+         font: inherit;
+         display: table-cell;
+         width: 100%;
+         height: 100%;
+         border: 1px solid #ddd;
+         
+         textarea {
+            font: inherit;
+            width: 98%;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            resize: none;        
+            color: inherit;
+            border: 1px solid #ddd;
+            
+            &:hover, &:focus {
+               border: 1px solid orange;
+            }
+         }
+      }
+      
+      .action {
+         display: table-cell;
+         vertical-align: middle;
+         text-align: center;
+         
+         span {
+            color: #2A85E8;
+            
+            &:hover {
+               color: orange;
+               cursor: pointer;
+            }
+         }
+      }
+   }
+}
