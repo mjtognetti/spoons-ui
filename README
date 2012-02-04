@@ -1,4 +1,4 @@
-NOTE: This project in this repository does NOT point to the API required for use. The application will not function correctly without access to the SPOONS API. This was done for security concerns which will be alleviated within the next two weeks.
+NOTE: The project in this repository does NOT point to the API required for use. The application will not function correctly without access to the SPOONS API. This was done for security concerns which will be alleviated within the next two weeks.
 
 
 A descriptive excerpt from a paper, written by myself and the SPOONS team, accepted to WWW2012, Industrial Track:
